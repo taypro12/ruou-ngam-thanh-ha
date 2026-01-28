@@ -2,20 +2,18 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  plugins: [react()],
+  base: "./", // GitHub Pages / static hosting
 
-  // Dùng './' nếu deploy vào subfolder hoặc host tĩnh
-  base: "./",
+  plugins: [react()],
 
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    cssCodeSplit: true,
     sourcemap: false,
     minify: "terser",
 
     rollupOptions: {
-      input: "./index.html",
+      input: "index.html",
       output: {
         manualChunks: {
           react: ["react", "react-dom", "react-router-dom"],
