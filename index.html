@@ -1,97 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+  <!-- Basic -->
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Rượu Ngâm Thanh Hà | Rượu Sâm & Dược Liệu Quý</title>
-  <meta name="description" content="Cửa hàng Rượu Ngâm Thanh Hà chuyên sâm Ngọc Linh, ba kích, đông trùng hạ thảo." />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <!-- SEO -->
+  <title>Rượu Ngâm Thanh Hà | Rượu Sâm & Dược Liệu Quý</title>
+  <meta
+    name="description"
+    content="Cửa hàng Rượu Ngâm Thanh Hà chuyên sâm Ngọc Linh, ba kích, đông trùng hạ thảo – quà biếu cao cấp, chuẩn dược liệu."
+  />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Rượu Ngâm Thanh Hà" />
+
+  <!-- Open Graph (Facebook, Zalo) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rượu Ngâm Thanh Hà" />
+  <meta
+    property="og:description"
+    content="Rượu sâm – rượu dược liệu cao cấp, ngâm thủ công, nguyên liệu tuyển chọn."
+  />
+  <meta property="og:locale" content="vi_VN" />
+  <!-- <meta property="og:image" content="/og-image.jpg" /> -->
+
+  <!-- Favicon -->
+  <!-- <link rel="icon" type="image/png" href="/favicon.png" /> -->
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Base theme variables (optional, Tailwind sẽ dùng lại) -->
   <style>
     :root {
       --bg: #FAF9F6;
       --brand: #B48C48;
       --text: #2C241E;
     }
+
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      margin: 0;
-      padding: 0;
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(180, 140, 72, 0.1);
-    }
-    .text-gradient {
-      background: linear-gradient(to right, #B48C48, #8C6A3A);
-      -webkit-background-clip: text;
-      -webkit-fill-color: transparent;
-    }
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    @keyframes hot-flash {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(0.95); }
-    }
-    .animate-hot-flash {
-      animation: hot-flash 2s infinite ease-in-out;
-    }
-    .btn-shine {
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-shine::after {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-      transform: rotate(45deg);
-      transition: 0.5s;
-    }
-    .btn-shine:hover::after {
-      left: 100%;
-      top: 100%;
-    }
-    /* Tối ưu hiển thị cho thiết bị di động */
-    @media (max-width: 640px) {
-      h1 { font-size: 2.5rem !important; }
     }
   </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.93.2",
-    "vite": "https://esm.sh/vite@^7.3.1"
-  }
-}
-</script>
 </head>
+
 <body>
+  <!-- React root -->
   <div id="root"></div>
-  <!-- Điểm nạp tệp duy nhất cho Vite. Lưu ý đường dẫn tương đối ./ quan trọng cho GitHub Pages -->
-  <script type="module" src="./index.tsx"></script>
+
+  <!-- Vite entry -->
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
