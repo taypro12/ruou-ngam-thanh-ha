@@ -1,31 +1,32 @@
-
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  // Dùng './' giúp app chạy được ở bất kỳ đường dẫn nào (root hoặc subfolder)
-  base: './', 
+
+  // Dùng './' nếu deploy vào subfolder hoặc host tĩnh
+  base: "./",
+
   build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
+    outDir: "dist",
+    assetsDir: "assets",
     cssCodeSplit: true,
     sourcemap: false,
-    minify: 'terser',
+    minify: "terser",
+
     rollupOptions: {
-      input: {
-        main: './index.html',
-      },
+      input: "./index.html",
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          utils: ['lucide-react', '@google/genai']
+          react: ["react", "react-dom", "react-router-dom"],
+          ui: ["lucide-react"]
         }
       }
-    },
+    }
   },
+
   server: {
     port: 3000,
-    strictPort: true,
+    strictPort: true
   }
 });
